@@ -25,3 +25,5 @@ dist-ssr
 
 # Docker
 .docker/
+.env.local
+.env

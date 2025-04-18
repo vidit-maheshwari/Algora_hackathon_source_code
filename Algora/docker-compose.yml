@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  client:
+    build:
+      context: ./Client
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./Client/.env.local
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./Server/.env.local
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

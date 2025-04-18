@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies and nodemon globally
-RUN npm install && npm install -g nodemon
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Start the application with nodemon
-CMD ["nodemon", "index.js"]
+CMD ["node", "index.js"]
